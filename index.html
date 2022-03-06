@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>A Meaningful Page Title</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="row button-wrapper">
+        <button onclick="clearBoardRandomize()">Clear and Randomize</button>
+        <button class="margin-left" onclick="clearBoardRandomizeReset()">Clear, Randomize, Reset</button>
+        <button class="margin-left" onclick="clearBoard(true)">Clear</button>
+        <button class="margin-left" onclick="goBack()">Go Back</button>
+        <div class="row">
+            <p class="label">Points: </p><span class="label" style="margin-left: 0.5rem" id="points"></span>
+        </div>
+    </div>
+    <div id="game">
+        <div class="col">
+            <div class="row">
+                <!-- ROW 1 -->
+                <div class="tile player" id="0">0</div>
+                <div class="tile-b" id="1">1</div>
+                <div class="tile" id="2">2</div>
+                <div class="tile-b" id="3">3</div>
+                <div class="tile" id="4">4</div>
+                <div class="tile-b" id="5">5</div>
+                <div class="tile" id="6">6</div>
+                <div class="tile-b" id="7">7</div>
+                <div class="tile" id="8">8</div>
+                <div class="tile-b" id="9">9</div>
+                <div class="tile" id="10">10</div>
+                <div class="tile-b" id="11">11</div>
+            </div>
+            <div class="row">
+                <!-- ROW 2 -->
+                <div class="tile-b" id="12">12</div>
+                <div class="tile" id="13">13</div>
+                <div class="tile-b" id="14">14</div>
+                <div class="tile" id="15">15</div>
+                <div class="tile-b" id="16">16</div>
+                <div class="tile" id="17">17</div>
+                <div class="tile-b" id="18">18</div>
+                <div class="tile" id="19">19</div>
+                <div class="tile-b" id="20">20</div>
+                <div class="tile" id="21">21</div>
+                <div class="tile-b" id="22">22</div>
+                <div class="tile" id="23">23</div>
+            </div>
+            <div class="row">
+                <!-- ROW 3 -->
+                <div class="tile" id="24">24</div>
+                <div class="tile-b" id="25">25</div>
+                <div class="tile" id="26">26</div>
+                <div class="tile-b" id="27">27</div>
+                <div class="tile" id="28">28</div>
+                <div class="tile-b" id="29">29</div>
+                <div class="tile" id="30">30</div>
+                <div class="tile-b" id="31">31</div>
+                <div class="tile" id="32">32</div>
+                <div class="tile-b" id="33">33</div>
+                <div class="tile" id="34">34</div>
+                <div class="tile-b" id="35">35</div>
+            </div>
+            <div class="row">
+                <!-- ROW 4 -->
+                <div class="tile-b" id="36">36</div>
+                <div class="tile" id="37">37</div>
+                <div class="tile-b" id="38">38</div>
+                <div class="tile" id="39">39</div>
+                <div class="tile-b" id="40">40</div>
+                <div class="tile" id="41">41</div>
+                <div class="tile-b" id="42">42</div>
+                <div class="tile" id="43">43</div>
+                <div class="tile-b" id="44">44</div>
+                <div class="tile" id="45">45</div>
+                <div class="tile-b" id="46">46</div>
+                <div class="tile" id="47">47</div>
+            </div>
+            <div class="row">
+                <!-- ROW 5 -->
+                <div class="tile" id="48">48</div>
+                <div class="tile-b" id="49">49</div>
+                <div class="tile" id="50">50</div>
+                <div class="tile-b" id="51">51</div>
+                <div class="tile" id="52">52</div>
+                <div class="tile-b" id="53">53</div>
+                <div class="tile" id="54">54</div>
+                <div class="tile-b" id="55">55</div>
+                <div class="tile" id="56">56</div>
+                <div class="tile-b" id="57">57</div>
+                <div class="tile" id="58">58</div>
+                <div class="tile-b" id="59">59</div>
+            </div>
+            <div class="row">
+                <!-- ROW 6 -->
+                <div class="tile-b" id="60">60</div>
+                <div class="tile" id="61">61</div>
+                <div class="tile-b" id="62">62</div>
+                <div class="tile" id="63">63</div>
+                <div class="tile-b" id="64">64</div>
+                <div class="tile" id="65">65</div>
+                <div class="tile-b" id="66">66</div>
+                <div class="tile" id="67">67</div>
+                <div class="tile-b" id="68">68</div>
+                <div class="tile" id="69">69</div>
+                <div class="tile-b" id="70">70</div>
+                <div class="tile" id="71">71</div>
+            </div>
+            <div class="row">
+                <!-- ROW 7 -->
+                <div class="tile" id="72">72</div>
+                <div class="tile-b" id="73">73</div>
+                <div class="tile" id="74">74</div>
+                <div class="tile-b" id="75">75</div>
+                <div class="tile" id="76">76</div>
+                <div class="tile-b" id="77">77</div>
+                <div class="tile" id="78">78</div>
+                <div class="tile-b" id="79">79</div>
+                <div class="tile" id="80">80</div>
+                <div class="tile-b" id="81">81</div>
+                <div class="tile" id="82">82</div>
+                <div class="tile-b" id="83">83</div>
+            </div>
+            <div class="row">
+                <!-- ROW 8 -->
+                <div class="tile-b" id="84">84</div>
+                <div class="tile" id="85">85</div>
+                <div class="tile-b" id="86">86</div>
+                <div class="tile" id="87">87</div>
+                <div class="tile-b" id="88">88</div>
+                <div class="tile" id="89">89</div>
+                <div class="tile-b" id="90">90</div>
+                <div class="tile" id="91">91</div>
+                <div class="tile-b" id="92">92</div>
+                <div class="tile" id="93">93</div>
+                <div class="tile-b" id="94">94</div>
+                <div class="tile" id="95">95</div>
+            </div>
+            <div class="row">
+                <!-- ROW 9 -->
+                <div class="tile" id="96">96</div>
+                <div class="tile-b" id="97">97</div>
+                <div class="tile" id="98">98</div>
+                <div class="tile-b" id="99">99</div>
+                <div class="tile" id="100">100</div>
+                <div class="tile-b" id="101">101</div>
+                <div class="tile" id="102">102</div>
+                <div class="tile-b" id="103">103</div>
+                <div class="tile" id="104">104</div>
+                <div class="tile-b" id="105">105</div>
+                <div class="tile" id="106">106</div>
+                <div class="tile-b" id="107">107</div>
+            </div>
+            <div class="row">
+                <!-- ROW 10 -->
+                <div class="tile-b" id="108">108</div>
+                <div class="tile" id="109">109</div>
+                <div class="tile-b" id="110">110</div>
+                <div class="tile" id="111">111</div>
+                <div class="tile-b" id="112">112</div>
+                <div class="tile" id="113">113</div>
+                <div class="tile-b" id="114">114</div>
+                <div class="tile" id="115">115</div>
+                <div class="tile-b" id="116">116</div>
+                <div class="tile" id="117">117</div>
+                <div class="tile-b" id="118">118</div>
+                <div class="tile" id="119">119</div>
+            </div>
+            <div class="row">
+                <!-- ROW 11 -->
+                <div class="tile" id="120">120</div>
+                <div class="tile-b" id="121">121</div>
+                <div class="tile" id="122">122</div>
+                <div class="tile-b" id="123">123</div>
+                <div class="tile" id="124">124</div>
+                <div class="tile-b" id="125">125</div>
+                <div class="tile" id="126">126</div>
+                <div class="tile-b" id="127">127</div>
+                <div class="tile" id="128">128</div>
+                <div class="tile-b" id="129">129</div>
+                <div class="tile" id="130">130</div>
+                <div class="tile-b" id="131">131</div>
+            </div>
+            <div class="row">
+                <!-- ROW 12 -->
+                <div class="tile-b" id="132">132</div>
+                <div class="tile" id="133">133</div>
+                <div class="tile-b" id="134">134</div>
+                <div class="tile" id="135">135</div>
+                <div class="tile-b" id="136">136</div>
+                <div class="tile" id="137">137</div>
+                <div class="tile-b" id="138">138</div>
+                <div class="tile" id="139">139</div>
+                <div class="tile-b" id="140">140</div>
+                <div class="tile" id="141">141</div>
+                <div class="tile-b" id="142">142</div>
+                <div class="tile" id="143">143</div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p style="font-weight: bold; color: white; margin-top: 1rem;">Create board with specific black tiles:</p>
+            <div class="row button-wrapper" style="margin-bottom: 0.3rem;">
+                <input class="num-input" maxlength="2" value="1" type="number" step="1" id="point1" name="point1" />
+                <input class="num-input" maxlength="2" value="2" type="number" step="1" id="point2" name="point2" />
+                <input class="num-input" maxlength="2" value="3" type="number" step="1" id="point3" name="point3" />
+                <input class="num-input" maxlength="2" value="4" type="number" step="1" id="point4" name="point4" />
+                <button class="margin-left" onclick="createBoardFromInput()">Submit</button>
+            </div>
+        </div>
+        <div style="margin-left: 3rem">
+            <div style="margin-top: 2.7rem;" class="row">
+                <p style="font-size: 1.5rem; font-weight: bold; color: white; margin-top: 1rem; margin-bottom: 0;">Timer: </p>
+                <span style="font-size: 1.5rem; margin-left: 1rem; font-weight: bold; color: white; margin-top: 1rem; margin-bottom: 0;" id="timer"></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <p style="font-weight: bold; color: white;">If you enjoyed consider giving me a follow at: </p> <a class="link" target="_blank" href="https://twitter.com/artofvictorg">@ArtOfVictorG</a>
+    </div>
+</body>
+<script src="./game.js"></script>
+</html>
